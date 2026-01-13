@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-bottom: 0 !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-section a {
+  text-transform: uppercase;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
