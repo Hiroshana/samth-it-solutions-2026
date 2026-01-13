@@ -67,3 +67,9 @@ function primary_menu()
         )
     );
 }
+
+// To add post thumbnail support
+add_theme_support('post-thumbnails');
+add_image_size('small-thumbnail', 180, 120, true);
+add_image_size('medium-thumbnail', 300, 200, true);
+add_image_size('largest', 800, 800, true);
