@@ -233,3 +233,51 @@ kirki::add_field('my_theme_config', array(
     ),
     'transport'   => 'auto',
 ));
+
+
+// Layout section
+kirki::add_section('layout_settings', array(
+    'title'          => esc_html('Layout', 'textdomain'),
+    'priority'       => 45,
+));
+//Container width (box / full)
+kirki::add_field('my_theme_config', array(
+    'type'        => 'radio-buttonset',
+    'settings'    => 'container_width',
+    'label'       => esc_html('Container Width', 'textdomain'),
+    'section'     => 'layout_settings',
+    'default'     =>  'full',
+    'choices' => [
+        'full' => esc_html__('Full Width', 'textdomain'),
+        'boxed' => esc_html__('Boxed', 'textdomain'),
+    ],
+    'transport'   => 'auto',
+));
+// Sidebar positions
+kirki::add_field('my_theme_config', array(
+    'type'        => 'radio-buttonset',
+    'settings'    => 'sidebar_position',
+    'label'       => esc_html('Sidebar Position', 'textdomain'),
+    'section'     => 'layout_settings',
+    'default'     =>  'right',
+    'choices' => [
+        'left' => esc_html__('Left Sidebar', 'textdomain'),
+        'right' => esc_html__('Right Sidebar', 'textdomain'),
+        'none' => esc_html__('No Sidebar', 'textdomain'),
+    ],
+    'transport'   => 'refresh',
+));
+// Content spacing
+kirki::add_field('my_theme_config', array(
+    'type'        => 'spacing',
+    'settings'    => 'content_spacing',
+    'label'       => esc_html('Content Spacing', 'textdomain'),
+    'section'     => 'layout_settings',
+    'default'     =>  [
+        'top' => '20px',
+        'right' => '20px',
+        'bottom' => '20px',
+        'left' => '20px'
+    ],
+    'transport'   => 'auto',
+));
