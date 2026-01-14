@@ -132,7 +132,7 @@ kirki::add_field('my_theme_config', array(
 // Font Size Section
 kirki::add_section('typography_settings', array(
     'title'          => esc_html('Typography', 'textdomain'),
-    'priority'       => 20,
+    'priority'       => 25,
 ));
 // body font size
 kirki::add_field('my_theme_config', array(
@@ -271,7 +271,7 @@ kirki::add_field('my_theme_config', array(
 kirki::add_field('my_theme_config', array(
     'type'        => 'spacing',
     'settings'    => 'content_spacing',
-    'label'       => esc_html('Content Spacing', 'textdomain'),
+    'label'       => esc_html__('Content Spacing', 'textdomain'),
     'section'     => 'layout_settings',
     'default'     =>  [
         'top' => '20px',
@@ -279,5 +279,52 @@ kirki::add_field('my_theme_config', array(
         'bottom' => '20px',
         'left' => '20px'
     ],
+    'transport'   => 'auto',
+));
+
+// Author details section
+kirki::add_section('author_details_settings', array(
+    'title'          => esc_html__('Blog Author Details', 'textdomain'),
+    'description'       => esc_html__('Customize your author information for the current blog', 'textdomain'),
+    'panel'         => '',
+    'priority'       => 20,
+));
+// profile picture
+kirki::add_field('my_theme_config', array(
+    'type'        => 'image',
+    'settings'    => 'author_profile_picture',
+    'label'       => esc_html__('Author Profile Picture', 'textdomain'),
+    'section'     => 'author_details_settings',
+    'default'     => '',
+    'choices'     => array(
+        'save_as' => 'id',
+    ),
+    'transport'   => 'auto',
+));
+// Show author details
+kirki::add_field('my_theme_config', array(
+    'type'        => 'text',
+    'settings'    => 'author_name',
+    'label'       => esc_html__('Author Name', 'textdomain'),
+    'section'     => 'author_details_settings',
+    'default'     =>  esc_html__('Hiro Wanni', 'textdomain'),
+    'transport'   => 'auto',
+));
+// Author position
+kirki::add_field('my_theme_config', array(
+    'type'        => 'text',
+    'settings'    => 'author_position',
+    'label'       => esc_html__('Author Position', 'textdomain'),
+    'section'     => 'author_details_settings',
+    'default'     => esc_html__('Senior Developer at XYZ Company', 'textdomain'),
+    'transport'   => 'auto',
+));
+// Author bio
+kirki::add_field('my_theme_config', array(
+    'type'        => 'textarea',
+    'settings'    => 'author_bio',
+    'label'       => esc_html__('Author Bio', 'textdomain'),
+    'section'     => 'author_details_settings',
+    'default'     => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, placerat erat at, efficitur quam.', 'textdomain'),
     'transport'   => 'auto',
 ));
