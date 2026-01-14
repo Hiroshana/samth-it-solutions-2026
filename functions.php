@@ -127,3 +127,109 @@ kirki::add_field('my_theme_config', array(
     'default'     => '#ffffff',
     'transport'   => 'auto',
 ));
+
+
+// Font Size Section
+kirki::add_section('typography_settings', array(
+    'title'          => esc_html('Typography', 'textdomain'),
+    'priority'       => 20,
+));
+// body font size
+kirki::add_field('my_theme_config', array(
+    'type'        => 'typography',
+    'settings'    => 'body_font',
+    'label'       => esc_html('Body Font', 'textdomain'),
+    'section'     => 'typography_settings',
+    'default'     => [
+        'font-family' => 'Roboto, sans-serif',
+        'variant'     => 'regular',
+        'font-size'   => '16px',
+    ],
+    'choices'     => array(
+        'fonts' => array(
+            'google' => array('popularity', 50),
+            'standard' => array('serif', 'sans-serif', 'monospace')
+        ),
+    ),
+    'transport'   => 'auto',
+));
+// Heading font size H1
+kirki::add_field('my_theme_config', array(
+    'type'        => 'typography',
+    'settings'    => 'h1_font',
+    'label'       => esc_html('H1 Font', 'textdomain'),
+    'section'     => 'typography_settings',
+    'default'     => [
+        'font-family' => 'Lato, sans-serif',
+        'variant'     => '700',
+        'font-size'   => '36px',
+    ],
+    'choices'     => array(
+        'fonts' => array(
+            'google' => array('popularity', 50),
+            'standard' => array('serif', 'sans-serif', 'monospace')
+        ),
+    ),
+    'transport'   => 'auto',
+));
+
+// Button Style Section
+kirki::add_section('button_style_settings', array(
+    'title'          => esc_html('Button Styles', 'textdomain'),
+    'priority'       => 40,
+));
+// Button background color
+kirki::add_field('my_theme_config', array(
+    'type'        => 'color',
+    'settings'    => 'button_background_color',
+    'label'       => esc_html('Background Color', 'textdomain'),
+    'section'     => 'button_style_settings',
+    'default'     => '#0073aa',
+    'transport'   => 'auto',
+));
+// Button hover background color
+kirki::add_field('my_theme_config', array(
+    'type'        => 'color',
+    'settings'    => 'button_hover_background_color',
+    'label'       => esc_html('Hover Background Color', 'textdomain'),
+    'section'     => 'button_style_settings',
+    'default'     => '#005177',
+    'transport'   => 'auto',
+));
+// Button text color
+kirki::add_field('my_theme_config', array(
+    'type'        => 'color',
+    'settings'    => 'button_text_color',
+    'label'       => esc_html('Text Color', 'textdomain'),
+    'section'     => 'button_style_settings',
+    'default'     => '#ffffff',
+    'transport'   => 'auto',
+));
+// Button border radius
+kirki::add_field('my_theme_config', array(
+    'type'        => 'spacing',
+    'settings'    => 'button_border_radius',
+    'label'       => esc_html('Border Radius (px)', 'textdomain'),
+    'section'     => 'button_style_settings',
+    'default'     =>  array(
+        'top'  => '4px',
+        'right'  => '4px',
+        'bottom' => '4px',
+        'left'  => '4px',
+    ),
+    'transport'   => 'auto',
+));
+// Button padding
+kirki::add_field('my_theme_config', array(
+    'type'        => 'spacing',
+    'settings'    => 'button_padding',
+    'label'       => esc_html('Button Padding (px)', 'textdomain'),
+    'section'     => 'button_style_settings',
+    'default'     =>  array(
+        'top'  => '10px',
+        'right'  => '20px',
+        'bottom' => '10px',
+        'left'  => '20px',
+    ),
+    'transport'   => 'auto',
+));
