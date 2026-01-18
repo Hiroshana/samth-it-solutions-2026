@@ -341,3 +341,30 @@ kirki::add_field('my_theme_config', array(
     'default'     => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, placerat erat at, efficitur quam.', 'textdomain'),
     'transport'   => 'auto',
 ));
+
+
+// Widget Area Registration
+function register_widget_areas()
+{
+    register_sidebar(array(
+        'name'          => __('Sidebar Widget Area', 'textdomain'),
+        'id'            => 'sidebar-widget-area',
+        'description'   => __('Widgets in this area will be shown on the sidebar.', 'textdomain'),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name'          => __('Footer Widget Area', 'textdomain'),
+        'id'            => 'footer-widget-area',
+        'description'   => __('Widgets in this area will be shown in the footer.', 'textdomain'),
+        'before_widget' => '<div class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="footer-widget-title">',
+        'after_title'   => '</h4>',
+    ));
+}
+
+add_action('widgets_init', 'register_widget_areas');
