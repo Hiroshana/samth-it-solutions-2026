@@ -13,6 +13,19 @@ function load_scripts()
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
+
+/**
+ * FontAwesome Integration
+ * @return void
+ */
+function enqueue_font_awesome()
+{
+    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css', array(), '7.0.1', 'all');
+}
+add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
+
+
+
 /**
  * Summary of bootstrap_and_jquery
  * @return void
@@ -292,7 +305,7 @@ kirki::add_section('author_details_settings', array(
 // profile picture
 kirki::add_field('my_theme_config', array(
     'type'        => 'image',
-    'settings'    => 'author_profile_picture',
+    'settings'    => 'author_picture',
     'label'       => esc_html__('Author Profile Picture', 'textdomain'),
     'section'     => 'author_details_settings',
     'default'     => '',
